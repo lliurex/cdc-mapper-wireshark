@@ -1,0 +1,13 @@
+Source: cdc-mapper-wireshark
+Section: utils
+Priority: optional
+Maintainer: Lliurex Team <lliurex@gva.es>
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.4.1
+Homepage: https://www.lliurex.net
+
+Package: cdc-mapper-wireshark
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends},cdc-mapper
+Description: Config for WireShark for CDC users
+ Create a config for WireShark to CDC users
