@@ -1,0 +1,7 @@
+{
+  "name":"wireshark",
+  "editable":false,
+  "alu":true,
+  "doc":true,
+  "adm":true
+}
