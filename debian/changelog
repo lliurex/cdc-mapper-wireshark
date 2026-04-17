@@ -1,3 +1,10 @@
+cdc-mapper-wireshark (0.2) noble; urgency=medium
+
+  * Remove restart cdc-mapper service. On noble not exists.
+  * Remove dependency with cdc-mapper
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Fri, 17 Apr 2026 13:55:57 +0200
+
 cdc-mapper-wireshark (0.1) noble; urgency=medium
 
   * Initial release
