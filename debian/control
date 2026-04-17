@@ -8,6 +8,6 @@ Homepage: https://www.lliurex.net
 
 Package: cdc-mapper-wireshark
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends},cdc-mapper
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Config for WireShark for CDC users
  Create a config for WireShark to CDC users
