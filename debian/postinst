@@ -4,21 +4,18 @@
 
 set -e
 
-# summary of how this script can be called:
-#        * <postinst> `configure' <most-recently-configured-version>
-#        * <old-postinst> `abort-upgrade' <new version>
-#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
-#          <new-version>
-#        * <postinst> `abort-remove'
-#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
-#          <failed-install-package> <version> `removing'
-#          <conflicting-package> <version>
-# for details, see https://www.debian.org/doc/debian-policy/ or
-# the debian-policy package
-
-
 case "$1" in
     configure)
+		if ! getent group | grep -q "wireshark:"
+		then
+			addgroup --quiet --system wireshark 2>/dev/null || true
+		fi
+		if [ -e /usr/bin/dumpcap ]
+		then 
+			echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
+			dpkg-reconfigure -f noninteractive wireshark-common
+		fi
+
        systemctl restart cdc-mapper.service || true
     ;;
 
